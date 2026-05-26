@@ -25,7 +25,7 @@ function LabChip({
 
 export function Hero() {
   return (
-    <section className="relative bg-black overflow-x-clip pt-[calc(4.75rem+env(safe-area-inset-top,0px))] pb-10 sm:pb-12 md:pb-16 lg:pb-20">
+    <section className="max-lg:h-svh relative bg-black overflow-x-clip pt-[calc(4.75rem+env(safe-area-inset-top,0px))] pb-10 sm:pb-12 md:pb-16 lg:pb-20">
       <div className="bg-grid-faint pointer-events-none absolute inset-0" />
 
       <div
@@ -41,8 +41,8 @@ export function Hero() {
         aria-hidden
       />
 
-      <div className="relative mx-auto grid max-w-7xl items-start gap-8 px-4 sm:gap-10 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8">
-        <div className="z-1 flex flex-col gap-4 text-center sm:gap-5 lg:col-span-6 lg:gap-6 lg:pr-4 lg:text-left xl:col-span-5">
+      <div className="h-full relative mx-auto grid max-w-7xl items-start gap-8 px-4 sm:gap-10 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8">
+        <div className="z-1 h-full flex flex-col gap-4 text-center sm:gap-5 lg:col-span-6 lg:gap-6 lg:pr-4 lg:text-left xl:col-span-5">
           <div className="flex flex-col items-center gap-3 animate-fade-up lg:items-start">
             <span className="inline-flex max-w-[20rem] items-center rounded-full border border-violet-500/25 bg-violet-500/[0.07] px-3 py-1.5 text-[11px] font-medium leading-snug text-violet-100/95 sm:max-w-none sm:px-4 sm:text-xs">
               Modern web experiences for ambitious brands
@@ -63,7 +63,7 @@ export function Hero() {
             </div>
           </div>
 
-          <h1 className="animate-fade-up hero-delay-1 font-semibold leading-[1.08] tracking-tight text-white">
+          <h1 className="mt-auto animate-fade-up hero-delay-1 font-semibold leading-[1.08] tracking-tight text-white">
             <span className="block text-[clamp(1.85rem,6.5vw,3.5rem)] text-balance">
               We engineer products that feel
             </span>
@@ -80,7 +80,7 @@ export function Hero() {
             delivery without theatre.
           </p>
 
-          <div className="animate-fade-up hero-delay-3 flex flex-col items-center gap-2.5 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start lg:gap-3">
+          <div className="mt-auto animate-fade-up hero-delay-3 flex flex-col items-center gap-2.5 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start lg:gap-3">
             <MagneticButton className="w-full sm:w-auto">
               <CTAButton
                 href="#contact"
