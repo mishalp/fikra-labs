@@ -2,11 +2,10 @@
 
 import type { ReactNode } from "react";
 import Image from "next/image";
-import { Activity, ArrowRight, Radio, Server } from "lucide-react";
+import { Activity, ArrowRight, Radio } from "lucide-react";
 import { CTAButton } from "@/components/ui/CTAButton";
-import { FikraFrame } from "@/components/ui/FikraFrame";
 import { MagneticButton } from "@/components/ui/MagneticButton";
-import { heroDashboardImage } from "@/lib/site-content";
+import { heroImage } from "@/lib/site-content";
 
 function LabChip({
   children,
@@ -26,7 +25,7 @@ function LabChip({
 
 export function Hero() {
   return (
-    <section className="relative overflow-x-clip pt-[calc(4.75rem+env(safe-area-inset-top,0px))] pb-10 sm:pb-12 md:pb-16 lg:pb-20">
+    <section className="relative bg-black overflow-x-clip pt-[calc(4.75rem+env(safe-area-inset-top,0px))] pb-10 sm:pb-12 md:pb-16 lg:pb-20">
       <div className="bg-grid-faint pointer-events-none absolute inset-0" />
 
       <div
@@ -43,7 +42,7 @@ export function Hero() {
       />
 
       <div className="relative mx-auto grid max-w-7xl items-start gap-8 px-4 sm:gap-10 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8">
-        <div className="flex flex-col gap-4 text-center sm:gap-5 lg:col-span-6 lg:gap-6 lg:pr-4 lg:text-left xl:col-span-5">
+        <div className="z-1 flex flex-col gap-4 text-center sm:gap-5 lg:col-span-6 lg:gap-6 lg:pr-4 lg:text-left xl:col-span-5">
           <div className="flex flex-col items-center gap-3 animate-fade-up lg:items-start">
             <span className="inline-flex max-w-[20rem] items-center rounded-full border border-violet-500/25 bg-violet-500/[0.07] px-3 py-1.5 text-[11px] font-medium leading-snug text-violet-100/95 sm:max-w-none sm:px-4 sm:text-xs">
               Modern web experiences for ambitious brands
@@ -104,62 +103,23 @@ export function Hero() {
           </div>
         </div>
 
+    <div className="max-lg:absolute max-lg:inset-0 max-lg:z-0 max-lg:opacity-40 lg:col-span-6 lg:mx-0 xl:col-span-7">
         <div className="relative mx-auto w-full min-w-0 animate-scale-in hero-dashboard-animate-delay-lg lg:col-span-6 lg:mx-0 xl:col-span-7">
-          <div className="md:animate-soft-float">
-            <FikraFrame className="relative shadow-[0_24px_64px_-32px_rgba(0,0,0,0.75)] md:shadow-[0_40px_120px_-48px_rgba(0,0,0,0.85)]">
-              <div className="relative">
-                <div className="absolute left-3 top-3 z-20 flex max-w-[calc(100%-1.5rem)] flex-wrap gap-2 sm:left-4 sm:top-4">
-                  <div className="rounded-lg border border-white/10 bg-black/75 px-2.5 py-1.5 font-mono text-[9px] text-emerald-300/95 sm:text-[10px]">
-                    <span className="text-zinc-500">POST</span> /v1/events{" "}
-                    <span className="text-emerald-400">200</span>
-                  </div>
-                  <div className="hidden rounded-lg border border-white/10 bg-black/75 px-2.5 py-1.5 text-[10px] text-zinc-300 sm:inline-flex sm:items-center sm:gap-1.5">
-                    <Server className="h-3 w-3 text-violet-300" aria-hidden />
-                    deploy <span className="text-emerald-400">live</span>
-                  </div>
-                </div>
-
-                <div className="absolute bottom-3 left-3 z-20 hidden rounded-lg border border-white/10 bg-black/75 px-2.5 py-2 sm:block md:left-4 md:bottom-4">
-                  <p className="font-mono text-[9px] uppercase tracking-wider text-zinc-500">
-                    Active sessions
-                  </p>
-                  <div className="mt-1.5 flex h-7 items-end gap-0.5">
-                    {[40, 65, 35, 80, 50, 90, 45].map((h, i) => (
-                      <span
-                        key={i}
-                        className="w-1 rounded-sm bg-gradient-to-t from-violet-600/80 to-indigo-400/60"
-                        style={{ height: `${h}%` }}
-                      />
-                    ))}
-                  </div>
-                </div>
-
-                <div className="absolute bottom-3 right-3 z-20 rounded-lg border border-white/10 bg-black/75 px-2.5 py-1.5 text-right md:bottom-4 md:right-4">
-                  <p className="font-mono text-[9px] text-zinc-500">p99 latency</p>
-                  <p className="font-mono text-sm font-semibold tabular-nums text-white">
-                    124<span className="text-xs text-zinc-500">ms</span>
-                  </p>
-                </div>
-
-                <div className="relative">
-                  <div className="relative aspect-[4/3] w-full min-h-0 overflow-hidden sm:aspect-video">
-                    <Image
-                      src={heroDashboardImage}
-                      alt="Product analytics dashboard with revenue and conversion KPIs"
-                      fill
-                      className="object-cover object-left-top"
-                      sizes="(max-width: 768px) 100vw, 55vw"
-                      priority
-                      fetchPriority="high"
-                    />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#030510]/88 via-[#030510]/18 to-transparent" />
-                  </div>
-                </div>
-              </div>
-            </FikraFrame>
+          <div className="relative aspect-square w-full animate-laptop-float motion-reduce:animate-none sm:aspect-[4/3]">
+            <Image
+                src={heroImage}
+                alt="Fikra Labs laptop displaying a purple-glow analytics dashboard interface"
+                fill
+                className="object-contain object-center drop-shadow-[16px_4px_90px_rgba(0,0,0,1)]"
+                sizes="(max-width: 768px) 100vw, 55vw"
+                priority
+                fetchPriority="high"
+              />
           </div>
         </div>
+        </div>
       </div>
+
     </section>
   );
 }

@@ -1,113 +1,132 @@
 "use client";
 
 import { processSteps } from "@/lib/site-content";
-import { SectionTitle } from "@/components/ui/SectionTitle";
-import { FikraFrame } from "@/components/ui/FikraFrame";
 import { RevealGroup, RevealItem } from "@/components/ui/Reveal";
+
+type ProcessStep = (typeof processSteps)[number];
+
+/** Progressive vertical rhythm + subtle width shift on desktop. */
+const cardRhythm = [
+  "mt-0",
+  "mt-6 lg:mt-8 lg:mr-4",
+  "mt-7 lg:mt-10 lg:ml-6",
+  "mt-6 lg:mt-9 lg:mr-8",
+  "mt-8 lg:mt-12 lg:ml-3",
+] as const;
+
+function ProcessStepCard({ step }: { step: ProcessStep }) {
+  return (
+    <article className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.02] transition-[border-color,background-color] duration-300 ease-out md:hover:border-violet-500/30 md:hover:bg-white/[0.03]">
+      <span
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-400/30 to-transparent opacity-80 transition-opacity duration-300 ease-out md:group-hover:via-violet-400/50"
+        aria-hidden
+      />
+
+      <div className="flex flex-col gap-5 p-5 sm:flex-row sm:gap-6 sm:p-6 lg:gap-8 lg:p-8">
+        <div className="flex shrink-0 flex-row items-center gap-4 sm:flex-col sm:items-start sm:gap-3 sm:border-r sm:border-white/[0.06] sm:pr-6 lg:pr-8">
+          <span className="relative flex h-2 w-2 shrink-0 items-center justify-center">
+            <span className="absolute h-2 w-2 rounded-full bg-violet-500/30" />
+            <span className="relative h-1 w-1 rounded-full bg-violet-400/80 shadow-[0_0_8px_rgba(139,92,246,0.5)]" />
+          </span>
+          <span
+            className="font-mono text-[clamp(2.75rem,8vw,4.5rem)] font-semibold leading-none tracking-tighter text-white/[0.12] sm:text-[4rem] lg:text-[4.5rem]"
+            aria-hidden
+          >
+            {step.n}
+          </span>
+        </div>
+
+        <div className="min-w-0 flex-1">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-violet-300/85">
+            {step.tag}
+          </p>
+          <h3 className="mt-2 text-xl font-semibold tracking-tight text-white sm:text-2xl">
+            {step.title}
+          </h3>
+          <p className="mt-3 max-w-xl text-sm leading-relaxed text-zinc-400 sm:text-[15px] sm:leading-relaxed">
+            {step.description}
+          </p>
+          <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-white/[0.06] pt-4">
+            <span className="font-mono text-[10px] uppercase tracking-wider text-zinc-500">
+              {step.meta}
+            </span>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
 
 export function Process() {
   return (
     <section
       id="process"
-      className="section-tone-warm relative overflow-x-clip py-16 sm:py-20 lg:py-28"
+      className="process-editorial relative overflow-x-clip border-y border-white/[0.05] py-14 sm:py-20 lg:py-24 xl:py-28"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionTitle
-          layout="editorial"
-          index="06"
-          eyebrow="How we work"
-          title="A journey engineered for momentum, not meetings."
-          subtitle="Six sequenced phases—each with artifacts, tools, and timeboxes—so stakeholders always know what “done” looks like."
-        />
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-[min(70vh,32rem)] bg-[radial-gradient(ellipse_80%_60%_at_30%_0%,rgba(99,102,241,0.12),transparent)]"
+        aria-hidden
+      />
+      <div
+        className="bg-grid-faint pointer-events-none absolute inset-0 opacity-[0.22]"
+        aria-hidden
+      />
+      <p
+        className="process-editorial-watermark pointer-events-none absolute left-[-2%] top-[18%] hidden select-none font-mono text-[clamp(4rem,14vw,11rem)] font-semibold uppercase leading-none tracking-tighter text-white/[0.025] lg:block"
+        aria-hidden
+      >
+        Workflow
+      </p>
 
-        <RevealGroup className="relative mt-10 sm:mt-12 md:hidden">
-          <div className="relative">
-            <div
-              className="absolute bottom-1 left-[11px] top-1 w-px bg-gradient-to-b from-violet-500/55 via-violet-500/15 to-transparent transition-opacity duration-300"
-              aria-hidden
-            />
-            <ol className="relative space-y-3">
-              {processSteps.map((step, i) => (
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="lg:grid lg:grid-cols-12 lg:items-start lg:gap-10 xl:gap-14">
+          {/* —— Editorial anchor (sticky on desktop) —— */}
+          <header className="mb-10 lg:sticky lg:top-28 lg:col-span-5 lg:mb-0 xl:col-span-4">
+            <div className="relative">
+              <div
+                className="absolute -left-4 top-0 hidden h-full w-px bg-gradient-to-b from-violet-500/50 via-violet-500/15 to-transparent sm:-left-6 lg:block"
+                aria-hidden
+              />
+              <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-violet-300/90 sm:text-xs">
+                Process
+              </p>
+              <h2 className="mt-4 max-w-md text-[clamp(1.75rem,4.5vw,2.75rem)] font-semibold leading-[1.1] tracking-tight text-white text-balance xl:max-w-lg">
+                How we transform ambitious ideas into scalable digital products.
+              </h2>
+              <p className="mt-5 max-w-md text-sm leading-relaxed text-zinc-400 sm:text-base sm:leading-relaxed">
+                From strategy to deployment, every phase is engineered for clarity,
+                speed, and long-term scalability—without theatre or wasted motion.
+              </p>
+              <p
+                className="mt-10 hidden font-mono text-[10px] uppercase tracking-[0.35em] text-zinc-600 lg:block"
+                aria-hidden
+              >
+                01 — 05 · workflow
+              </p>
+            </div>
+          </header>
+
+          {/* —— Workflow stack —— */}
+          <div className="lg:col-span-7 xl:col-span-8">
+            <RevealGroup>
+              <ol className="relative flex flex-col">
+                {processSteps.map((step, i) => (
                   <RevealItem
                     key={step.n}
                     as="li"
                     index={i}
-                    staggerMs={36}
-                    className="group relative flex gap-3 pl-8"
+                    staggerMs={55}
+                    className={`relative w-full m-4`}
                   >
-                <span className="absolute left-0 top-1 flex h-6 w-6 items-center justify-center rounded-full border border-violet-500/35 bg-[#0a0f1e] text-[10px] font-semibold text-violet-100 transition-[border-color,opacity,transform] duration-300 ease-out md:group-hover:border-violet-400/65 md:group-hover:opacity-100">
-                  {i + 1}
-                </span>
-                <FikraFrame offset animateEdge={false} className="min-w-0 flex-1">
-                  <div className="p-3.5 transition-opacity duration-300 ease-out">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <h3 className="text-[15px] font-semibold text-white">{step.title}</h3>
-                      <span className="rounded border border-white/10 bg-white/5 px-1.5 py-0.5 font-mono text-[9px] text-zinc-400">
-                        {step.duration}
-                      </span>
+                    <div className="process-card w-full">
+                      <ProcessStepCard step={step} />
                     </div>
-                    <p className="mt-2 text-xs leading-relaxed text-zinc-400">
-                      {step.description}
-                    </p>
-                    <p className="mt-2 font-mono text-[10px] text-zinc-500">
-                      {step.tools.join(" · ")}
-                    </p>
-                    <p className="mt-1 text-[11px] text-zinc-500">
-                      Out: {step.deliverables.join(" · ")}
-                    </p>
-                  </div>
-                </FikraFrame>
-              </RevealItem>
-              ))}
-            </ol>
+                  </RevealItem>
+                ))}
+              </ol>
+            </RevealGroup>
           </div>
-        </RevealGroup>
-
-        <RevealGroup className="relative mt-12 hidden md:block">
-          <div className="relative overflow-x-auto overflow-y-visible pb-6 scrollbar-hide">
-            <div
-              className="pointer-events-none absolute left-8 right-8 top-[22px] h-px bg-gradient-to-r from-transparent via-violet-500/35 to-transparent"
-              aria-hidden
-            />
-            <ol className="relative flex min-w-[920px] gap-4 px-2 lg:min-w-0 lg:justify-between lg:gap-3 lg:px-0">
-              {processSteps.map((step, i) => (
-                <RevealItem
-                  key={step.n}
-                  as="li"
-                  index={i}
-                  staggerMs={38}
-                  className="group relative w-[150px] shrink-0 lg:w-auto lg:flex-1 lg:max-w-[200px]"
-                >
-                  <div className="relative flex flex-col items-center pt-0">
-                    <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-violet-500/40 bg-[#0a0f1e] text-[11px] font-semibold text-violet-100 transition-colors duration-300 ease-out md:group-hover:border-violet-400/60">
-                      {i + 1}
-                    </span>
-                    <FikraFrame
-                      offset={false}
-                      animateEdge={false}
-                      className="mt-5 w-full transition-transform duration-300 ease-out md:group-hover:-translate-y-1"
-                    >
-                      <div className="p-3">
-                        <h3 className="text-center text-xs font-semibold leading-snug text-white">
-                          {step.title}
-                        </h3>
-                        <p className="mt-2 text-center text-[10px] leading-relaxed text-zinc-500">
-                          {step.duration}
-                        </p>
-                        <p className="mt-2 text-[10px] leading-snug text-zinc-400">
-                          {step.description}
-                        </p>
-                        <p className="mt-2 border-t border-white/5 pt-2 text-center font-mono text-[9px] text-zinc-500">
-                          {step.tools.slice(0, 2).join(" · ")}
-                        </p>
-                      </div>
-                    </FikraFrame>
-                  </div>
-                </RevealItem>
-              ))}
-            </ol>
-          </div>
-        </RevealGroup>
+        </div>
       </div>
     </section>
   );

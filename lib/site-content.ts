@@ -1,4 +1,7 @@
-/** Same URL for Hero + first project so `next/image` shares one optimized cache entry. */
+/** Hero frame — local asset (see `public/images/hero-dashboard.png`). */
+export const heroImage = "/images/hero-dashboard.png";
+
+/** First project card (Unsplash analytics UI). */
 export const heroDashboardImage =
   "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=85&auto=format&fit=crop";
 
@@ -13,102 +16,107 @@ export const navLinks = [
 
 export const services = [
   {
-    title: "Custom Web Development",
+    n: "01",
+    category: "Product Engineering",
+    title: "Custom Product Engineering",
     description:
-      "Production-grade Next.js and React apps with typed APIs, CI-ready quality, and maintainable architecture.",
-    icon: "code" as const,
+      "End-to-end product builds—typed systems, resilient architecture, and interfaces engineered for scale from day one.",
+    stack: ["Next.js", "React", "TypeScript", "Edge"],
+    featured: true,
   },
   {
+    n: "02",
+    category: "Platforms",
     title: "SaaS Platforms",
     description:
-      "Auth, billing hooks, multi-tenant patterns, and dashboards engineered for retention and scale.",
-    icon: "layers" as const,
+      "Auth, billing, multi-tenant patterns, and dashboards designed for retention, observability, and growth.",
+    stack: ["Auth", "Stripe", "PostgreSQL", "Dashboards"],
+    featured: false,
   },
   {
-    title: "UI/UX Design",
+    n: "03",
+    category: "Experience",
+    title: "UI/UX Systems",
     description:
-      "Product-led interfaces with clear hierarchy, accessible components, and conversion-focused flows.",
-    icon: "palette" as const,
+      "Product-led interfaces with clear hierarchy, accessible components, and flows tuned for conversion.",
+    stack: ["Figma", "Design tokens", "Motion", "A11y"],
+    featured: false,
   },
   {
-    title: "Performance Optimization",
+    n: "04",
+    category: "Performance",
+    title: "Performance Engineering",
     description:
-      "Core Web Vitals, image strategy, caching, and bundle discipline so your product feels instant.",
-    icon: "gauge" as const,
+      "Core Web Vitals, caching strategy, and bundle discipline so every interaction feels instant.",
+    stack: ["Lighthouse", "RUM", "CDN", "Images"],
+    featured: false,
   },
   {
+    n: "05",
+    category: "Growth",
     title: "SEO & Analytics",
     description:
-      "Structured metadata, sitemaps, event instrumentation, and funnels you can actually act on.",
-    icon: "lineChart" as const,
+      "Structured metadata, instrumentation, and funnels you can measure—and improve with confidence.",
+    stack: ["SEO", "GA4", "Events", "Schema"],
+    featured: false,
   },
   {
+    n: "06",
+    category: "Integrations",
     title: "API Integrations",
     description:
-      "Stripe, CRMs, data warehouses, and internal tools connected with reliable error handling and observability.",
-    icon: "plug" as const,
+      "Stripe, CRMs, data warehouses, and internal tools—connected with reliable error handling and observability.",
+    stack: ["REST", "Webhooks", "ETL", "Observability"],
+    featured: false,
   },
-];
+] as const;
 
 export const processSteps = [
   {
     n: "01",
-    title: "Discovery",
+    tag: "Strategy",
+    title: "Discover",
     description:
-      "We align on goals, users, constraints, and success metrics before writing production code.",
-    duration: "4–7 days",
-    tools: ["Workshop", "FigJam", "Analytics export"],
-    deliverables: ["North-star brief", "Risk map", "Scope v0"],
+      "Align on goals, users, and success metrics before we commit to build.",
+    meta: "2–3 days · Research & strategy",
   },
   {
     n: "02",
-    title: "Strategy",
+    tag: "UI/UX",
+    title: "Design",
     description:
-      "Information architecture, technical approach, and a phased roadmap with clear milestones.",
-    duration: "5–10 days",
-    tools: ["Notion", "ERD", "CWV baseline"],
-    deliverables: ["IA map", "Tech options memo", "Milestone plan"],
+      "High-fidelity interfaces and systems your team can ship with confidence.",
+    meta: "1–2 weeks · UI systems",
   },
   {
     n: "03",
-    title: "Design",
+    tag: "Engineering",
+    title: "Develop",
     description:
-      "High-fidelity UI, design system tokens, and responsive patterns tuned for engineering handoff.",
-    duration: "10–20 days",
-    tools: ["Figma", "Tokens", "Prototype"],
-    deliverables: ["UI kit v1", "Motion notes", "Accessibility spec"],
+      "Iterative builds, staging environments, and tight feedback every week.",
+    meta: "Sprint cycles · Production ready",
   },
   {
     n: "04",
-    title: "Development",
+    tag: "Deployment",
+    title: "Launch",
     description:
-      "Iterative builds with reviews, staging environments, and tight feedback loops each week.",
-    duration: "Rolling",
-    tools: ["Next.js", "GitHub", "CI"],
-    deliverables: ["Staging builds", "Changelog", "Test coverage"],
+      "Hardening, monitoring, and a calm go-live with clear rollback paths.",
+    meta: "3–5 days · Deployment",
   },
   {
     n: "05",
-    title: "Launch",
+    tag: "Growth",
+    title: "Optimize",
     description:
-      "Hardening, monitoring, analytics verification, and a calm go-live checklist.",
-    duration: "3–7 days",
-    tools: ["Vercel", "Sentry", "Checklists"],
-    deliverables: ["Runbook", "Rollback path", "Sign-off"],
-  },
-  {
-    n: "06",
-    title: "Optimization",
-    description:
-      "Post-launch tuning: performance budgets, A/B hooks, and roadmap for the next growth lever.",
-    duration: "Ongoing",
-    tools: ["RUM", "Experiments"],
-    deliverables: ["Perf budget", "Growth hooks", "Next-quarter plan"],
+      "Post-launch tuning—performance, experiments, and the next lever to pull.",
+    meta: "Ongoing · Growth loops",
   },
 ] as const;
 
 export const projects = [
   {
+    n: "01",
     title: "Northline Fintech Dashboard",
     category: "Fintech",
     summary:
@@ -116,13 +124,14 @@ export const projects = [
     tags: ["Next.js", "PostgreSQL", "Tailwind"],
     metrics: [
       { label: "LCP", value: "0.9s" },
-      { label: "TTI", value: "1.8s" },
+      { label: "Score", value: "98" },
       { label: "Uptime", value: "99.99%" },
     ],
     image: heroDashboardImage,
     alt: "Analytics dashboard with charts and KPI cards on a dark interface",
   },
   {
+    n: "02",
     title: "Helix AI Workspace",
     category: "AI SaaS",
     summary:
@@ -138,6 +147,7 @@ export const projects = [
     alt: "Code editor and terminal on a developer workspace screen",
   },
   {
+    n: "03",
     title: "Parcel Commerce Platform",
     category: "Ecommerce",
     summary:
@@ -153,6 +163,7 @@ export const projects = [
     alt: "Warehouse shelving with stacked cartons and outbound shipping boxes",
   },
   {
+    n: "04",
     title: "Pulse Analytics Suite",
     category: "Analytics",
     summary:
