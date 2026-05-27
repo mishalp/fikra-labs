@@ -55,7 +55,7 @@ export function CTABanner() {
                   <div className="flex flex-col items-stretch justify-center gap-2.5 sm:flex-row sm:flex-wrap sm:gap-3">
                     <MagneticButton className="w-full sm:w-auto">
                       <CTAButton
-                        href="mailto:hello@fikralabs.com"
+                        href="mailto:teamfikralabs@gmail.com"
                         variant="primary"
                         external
                         className="w-full border-violet-400/20 shadow-[0_0_28px_-12px_rgba(139,92,246,0.45)] sm:w-auto sm:min-w-[11rem] md:shadow-[0_0_40px_-12px_rgba(139,92,246,0.55)]"

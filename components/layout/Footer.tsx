@@ -68,14 +68,11 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-sm text-zinc-400">
               <li>
                 <a
-                  href="mailto:hello@fikralabs.com"
+                  href="mailto:teamfikralabs@gmail.com"
                   className="link-underline break-all transition-colors hover:text-white"
                 >
-                  hello@fikralabs.com
+                  teamfikralabs@gmail.com
                 </a>
-              </li>
-              <li className="text-xs leading-relaxed text-zinc-500 sm:text-sm">
-                Remote-first · GMT+4 availability
               </li>
             </ul>
           </div>

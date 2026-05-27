@@ -116,7 +116,7 @@ export function Process() {
                     as="li"
                     index={i}
                     staggerMs={55}
-                    className={`relative w-full m-4`}
+                    className={`relative w-full my-4`}
                   >
                     <div className="process-card w-full">
                       <ProcessStepCard step={step} />

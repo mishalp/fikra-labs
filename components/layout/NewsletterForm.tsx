@@ -8,7 +8,7 @@ export function NewsletterForm() {
   function onSubmit(e: FormEvent) {
     e.preventDefault();
     if (!email.trim()) return;
-    window.location.href = `mailto:hello@fikralabs.com?subject=${encodeURIComponent("Newsletter signup")}&body=${encodeURIComponent(email)}`;
+    window.location.href = `mailto:teamfikralabs@gmail.com?subject=${encodeURIComponent("Newsletter signup")}&body=${encodeURIComponent(email)}`;
   }
 
   return (
