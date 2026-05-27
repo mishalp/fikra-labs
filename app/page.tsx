@@ -25,13 +25,13 @@ export default function Home() {
       <main id="main" className="flex-1">
         <Hero />
         <SectionDivider className="mb-0" />
-        <TrustedBy />
+        {/* <TrustedBy /> */}
         <Services />
         <Process />
-        <Projects />
+        {/* <Projects /> */}
         <TechStack />
-        <Testimonials />
-        <Pricing />
+        {/* <Testimonials /> */}
+        {/* <Pricing /> */}
         <FAQ />
         <CTABanner />
       </main>
