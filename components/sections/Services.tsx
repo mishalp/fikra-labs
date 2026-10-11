@@ -166,8 +166,7 @@ export function Services() {
             </h2>
           </div>
           <p className="mt-5 max-w-xl text-sm leading-relaxed text-zinc-400 sm:text-base sm:leading-relaxed lg:col-span-5 lg:mt-0 lg:pb-1 lg:text-right">
-            A capabilities showcase—product engineering, platforms, experience, and
-            infrastructure—delivered as one coherent studio system.
+          From building digital products to designing user experiences and reliable infrastructure, we bring everything together under one roof.
           </p>
         </header>
 

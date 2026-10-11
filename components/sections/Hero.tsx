@@ -47,7 +47,7 @@ export function Hero() {
             <span className="inline-flex max-w-[20rem] items-center rounded-full border border-violet-500/25 bg-violet-500/[0.07] px-3 py-1.5 text-[11px] font-medium leading-snug text-violet-100/95 sm:max-w-none sm:px-4 sm:text-xs">
               Modern web experiences for ambitious brands
             </span>
-            <div className="flex flex-wrap justify-center gap-2 lg:justify-start">
+            {/* <div className="flex flex-wrap justify-center gap-2 lg:justify-start">
               <LabChip>
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400/90" />
                 production
@@ -60,24 +60,22 @@ export function Hero() {
                 <Activity className="h-3 w-3 text-sky-300/80" aria-hidden />
                 p99 118ms
               </LabChip>
-            </div>
+            </div> */}
           </div>
 
           <h1 className="mt-auto animate-fade-up hero-delay-1 font-semibold leading-[1.08] tracking-tight text-white">
             <span className="block text-[clamp(1.85rem,6.5vw,3.5rem)] text-balance">
-              We engineer products that feel
+            Turn Your Website Into Your Next Best
             </span>
             <span className="mt-2 block text-[clamp(1.85rem,6.5vw,3.5rem)] text-balance">
-              <span className="text-gradient">inevitable</span>
-              <span className="text-zinc-500"> — </span>
-              <span className="text-zinc-200">fast, exacting, alive.</span>
+              <span className="text-gradient">Salesperson</span>
+              {/* <span className="text-zinc-500"> — </span>
+              <span className="text-zinc-200">fast, exacting, alive.</span> */}
             </span>
           </h1>
 
           <p className="animate-fade-up hero-delay-2 mx-auto max-w-xl text-sm leading-relaxed text-zinc-400 sm:text-base lg:mx-0 lg:max-w-lg">
-            Fikra Labs is the studio behind interfaces operators trust and
-            engineers enjoy extending—strategy, systems design, and disciplined
-            delivery without theatre.
+          We build fast, professional websites that showcase your business, earn customer trust, and help turn visitors into paying customers.
           </p>
 
           <div className="mt-auto animate-fade-up hero-delay-3 flex flex-col items-center gap-2.5 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start lg:gap-3">

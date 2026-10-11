@@ -7,10 +7,10 @@ export const heroDashboardImage =
 
 export const navLinks = [
   { href: "#services", label: "Services" },
-  { href: "#work", label: "Work" },
+  // { href: "#work", label: "Work" },
   { href: "#process", label: "Process" },
   { href: "#stack", label: "Stack" },
-  { href: "#pricing", label: "Pricing" },
+  // { href: "#pricing", label: "Pricing" },
   { href: "#contact", label: "Contact" },
 ] as const;
 
